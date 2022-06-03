@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 const session = require('express-session')
 const Users = require('./mongo/user')
 const bodyParser = require('body-parser')
+const port=process.env.PORT || 8000
 app.use(bodyParser.urlencoded({ extended: true }))
 const jwt = require('jsonwebtoken')
 app.set('view engine', 'ejs')
@@ -89,4 +90,4 @@ app.get('/GetDigitStatus/:d', async (req, res) => {
     }
 
 })
-app.listen(4000);
+app.listen(port);
